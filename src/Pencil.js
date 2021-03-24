@@ -31,6 +31,28 @@ class Pencil {
       this.pencilLength -= 1;
     }
   }
+
+  erase(string, paper) {
+    let startIdx = paper.text.lastIndexOf(string);
+
+    if (startIdx === -1) {
+      return;
+    }
+
+    let textBeginning = paper.text.substring(0, startIdx);
+    let textEnding = paper.text.substring(startIdx + string.length);
+    let erasedString = this.eraseString(string);
+
+    paper.text = textBeginning + erasedString + textEnding;
+  }
+
+  eraseString(string) {
+    let blankString = "";
+    for (let i = string.length; i > 0; i--) {
+      blankString += " ";
+    }
+    return blankString;
+  }
 }
 
 module.exports = Pencil;

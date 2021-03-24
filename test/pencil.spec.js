@@ -75,4 +75,14 @@ describe("Pencil", () => {
       expect(pencil.pointDurability).to.equal(0);
     });
   });
+
+  describe("Erase", () => {
+    it("Can erase a given part of the text on the paper", () => {
+      let pencil = new Pencil(40, 1);
+
+      pencil.write("The best of the best", paper);
+      pencil.erase("best", paper);
+      expect(paper.text).to.equal("The best of the     ");
+    });
+  });
 });
