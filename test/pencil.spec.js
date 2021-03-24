@@ -78,11 +78,18 @@ describe("Pencil", () => {
 
   describe("Erase", () => {
     it("Can erase a given part of the text on the paper", () => {
-      let pencil = new Pencil(40, 1);
+      pencil = new Pencil(40, 1);
 
       pencil.write("The best of the best", paper);
       pencil.erase("best", paper);
       expect(paper.text).to.equal("The best of the     ");
+    });
+
+    it("Doesn't erase anything if the given string isn't in the text", () => {
+      pencil = new Pencil(40, 1);
+      pencil.write("The best of the best", paper);
+      pencil.erase("cheese", paper);
+      expect(paper.text).to.equal("The best of the best");
     });
   });
 });
