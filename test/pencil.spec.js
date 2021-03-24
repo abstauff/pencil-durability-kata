@@ -6,7 +6,7 @@ let paper;
 
 describe("Pencil", () => {
   beforeEach(() => {
-    pencil = new Pencil(10);
+    pencil = new Pencil(10, 5);
     paper = new Paper();
   });
   describe("Write", () => {
@@ -57,6 +57,10 @@ describe("Pencil", () => {
       pencil.write("I hope you have a nice day", paper);
       pencil.sharpen();
       expect(pencil.pointDurability).to.equal(10);
+    });
+
+    it("Has an initial length", () => {
+      expect(pencil.pencilLength).to.equal(5);
     });
   });
 });
