@@ -60,6 +60,25 @@ class Pencil {
     }
     return array.join("");
   }
+
+  edit(string, paper) {
+    let textArray = paper.text.split("");
+
+    let previousChar = textArray[0];
+    for (let i = 0; i < textArray.length; i++) {
+      let currentChar = textArray[i];
+
+      if (previousChar === " " && currentChar === " ") {
+        for (let k = 0; k < string.length; k++) {
+          textArray[i] = string[k];
+          i++;
+        }
+        paper.text = textArray.join("");
+        return;
+      }
+      previousChar = currentChar;
+    }
+  }
 }
 
 module.exports = Pencil;
