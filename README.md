@@ -1,4 +1,4 @@
-#pencil-durability-kata
+# pencil-durability-kata
 
 To install, run
 

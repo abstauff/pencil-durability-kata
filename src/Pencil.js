@@ -7,6 +7,7 @@ class Pencil {
     this.pencilLength = pencilLength;
     this.eraserDurability = eraserDurability;
   }
+
   write(string, paper) {
     for (let i = 0; i < string.length; i++) {
       let currentChar = string[i];
