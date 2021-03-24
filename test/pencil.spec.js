@@ -12,4 +12,13 @@ describe("Pencil", () => {
     pencil.write("hello", paper);
     expect(paper.text).to.equal("hello");
   });
+
+  it("Appends newly written strings to existing text on the paper", () => {
+    pencil = new Pencil();
+    paper = new Paper();
+
+    pencil.write("hello", paper);
+    pencil.write(" friends and neighbors", paper);
+    expect(paper.text).to.equal("hello friends and neighbors");
+  });
 });
