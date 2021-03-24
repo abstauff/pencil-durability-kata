@@ -70,7 +70,11 @@ class Pencil {
 
       if (previousChar === " " && currentChar === " ") {
         for (let k = 0; k < string.length; k++) {
-          textArray[i] = string[k];
+          if (textArray[i] !== " ") {
+            textArray[i] = "@";
+          } else {
+            textArray[i] = string[k];
+          }
           i++;
         }
         paper.text = textArray.join("");

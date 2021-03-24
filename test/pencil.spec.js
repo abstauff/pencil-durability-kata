@@ -134,6 +134,12 @@ describe("Pencil", () => {
         pencil.edit("apple", paper);
         expect(paper.text).to.equal("An apple a day keeps the doctor away");
       });
+
+      it("Existing text on the paper cannot 'shift' to make room for new text", () => {
+        pencil.write("An       a day keeps the doctor away", paper);
+        pencil.edit("artichoke", paper);
+        expect(paper.text).to.equal("An artich@k@ay keeps the doctor away");
+      });
     });
   });
 });
