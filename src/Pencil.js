@@ -48,14 +48,17 @@ class Pencil {
   }
 
   eraseString(string) {
-    let blankString = "";
-    for (let i = string.length - 1; i >= 0; i--) {
-      if (string[i] !== " ") {
-        this.eraserDurability -= 1;
+    let array = string.split("");
+
+    for (let i = array.length - 1; i >= 0; i--) {
+      if (this.eraserDurability > 0) {
+        if (array[i] !== " ") {
+          this.eraserDurability -= 1;
+        }
+        array[i] = " ";
       }
-      blankString += " ";
     }
-    return blankString;
+    return array.join("");
   }
 }
 

@@ -78,7 +78,7 @@ describe("Pencil", () => {
 
   describe("Erase", () => {
     it("Can erase a given part of the text on the paper", () => {
-      pencil = new Pencil(40, 1);
+      pencil = new Pencil(40, 1, 10);
 
       pencil.write("The best of the best", paper);
       pencil.erase("best", paper);
@@ -86,7 +86,7 @@ describe("Pencil", () => {
     });
 
     it("Doesn't erase anything if the given string isn't in the text", () => {
-      pencil = new Pencil(40, 1);
+      pencil = new Pencil(40, 1, 10);
       pencil.write("The best of the best", paper);
       pencil.erase("cheese", paper);
       expect(paper.text).to.equal("The best of the best");
@@ -108,6 +108,13 @@ describe("Pencil", () => {
       pencil.write("Here we are", paper);
       pencil.erase("we are", paper);
       expect(pencil.eraserDurability).to.equal(5);
+    });
+
+    it("Cannot erase anymore once eraser durability reaches 0", () => {
+      pencil = new Pencil(40, 1, 10);
+      pencil.write("Its in alphabetical order", paper);
+      pencil.erase("alphabetical", paper);
+      expect(paper.text).to.equal("Its in al           order");
     });
   });
 });
