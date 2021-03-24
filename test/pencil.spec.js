@@ -43,4 +43,9 @@ describe("Pencil", () => {
     pencil.write("hi \nbob", paper);
     expect(pencil.pointDurability).to.equal(5);
   });
+
+  it("Will only write spaces once the point is dull/ point durability is 0", () => {
+    pencil.write("I hope you have a nice day", paper);
+    expect(paper.text).to.equal("I hope you h              ");
+  });
 });
