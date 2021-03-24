@@ -5,7 +5,7 @@ class Pencil {
   write(string, paper) {
     paper.text += string;
 
-    let length = string.split(" ").join("").length;
+    let length = string.split(" ").join("").split("\n").join("").length;
     this.pointDurability -= length;
   }
 }
