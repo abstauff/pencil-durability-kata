@@ -67,5 +67,12 @@ describe("Pencil", () => {
       pencil.sharpen();
       expect(pencil.pencilLength).to.equal(0);
     });
+
+    it("Sharpening does not restore point durability once length is depleted", () => {
+      pencil.sharpen();
+      pencil.write("This will make the pencil dull", paper);
+      pencil.sharpen();
+      expect(pencil.pointDurability).to.equal(0);
+    });
   });
 });
