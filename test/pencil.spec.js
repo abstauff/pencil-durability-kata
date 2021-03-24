@@ -6,7 +6,7 @@ let paper;
 
 describe("Pencil", () => {
   beforeEach(() => {
-    pencil = new Pencil(10, 5);
+    pencil = new Pencil(10, 1);
     paper = new Paper();
   });
   describe("Write", () => {
@@ -60,7 +60,12 @@ describe("Pencil", () => {
     });
 
     it("Has an initial length", () => {
-      expect(pencil.pencilLength).to.equal(5);
+      expect(pencil.pencilLength).to.equal(1);
+    });
+
+    it("Length is diminished by 1 when sharpened", () => {
+      pencil.sharpen();
+      expect(pencil.pencilLength).to.equal(0);
     });
   });
 });
