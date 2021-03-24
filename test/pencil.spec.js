@@ -27,4 +27,12 @@ describe("Pencil", () => {
 
     expect(pencil.pointDurability).to.equal(5);
   });
+
+  it("Lowercase letters decrease durability value by 1", () => {
+    pencil = new Pencil(10);
+    paper = new Paper();
+
+    pencil.write("hello", paper);
+    expect(pencil.pointDurability).to.equal(5);
+  });
 });
