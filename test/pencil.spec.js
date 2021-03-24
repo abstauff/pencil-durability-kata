@@ -6,7 +6,7 @@ let paper;
 
 describe("Pencil", () => {
   beforeEach(() => {
-    pencil = new Pencil(10, 1);
+    pencil = new Pencil(10, 1, 10);
     paper = new Paper();
   });
   describe("Write", () => {
@@ -90,6 +90,12 @@ describe("Pencil", () => {
       pencil.write("The best of the best", paper);
       pencil.erase("cheese", paper);
       expect(paper.text).to.equal("The best of the best");
+    });
+  });
+
+  describe("Eraser Degradation", () => {
+    it("Eraser has an initial durability value", () => {
+      expect(pencil.eraserDurability).to.equal(10);
     });
   });
 });

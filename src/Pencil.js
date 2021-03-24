@@ -1,10 +1,11 @@
 const { isUpperCase, isASpace } = require("./utils");
 
 class Pencil {
-  constructor(pointDurability, pencilLength) {
+  constructor(pointDurability, pencilLength, eraserDurability) {
     this.pointDurability = pointDurability;
     this.originalPointDurability = pointDurability;
     this.pencilLength = pencilLength;
+    this.eraserDurability = eraserDurability;
   }
   write(string, paper) {
     for (let i = 0; i < string.length; i++) {
