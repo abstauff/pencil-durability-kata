@@ -3,7 +3,6 @@ const Pencil = require("../src/Pencil");
 const Paper = require("../src/Paper");
 let pencil;
 let paper;
-let sharpPencil;
 
 describe("Pencil", () => {
   describe("First half tests", () => {
@@ -80,7 +79,7 @@ describe("Pencil", () => {
     });
   });
 
-  describe("Second Half Tests", () => {
+  describe("Second half tests", () => {
     beforeEach(() => {
       pencil = new Pencil(40, 1, 10);
       paper = new Paper();
@@ -88,15 +87,12 @@ describe("Pencil", () => {
 
     describe("Erase", () => {
       it("Can erase a given part of the text on the paper", () => {
-        // pencil = new Pencil(40, 1, 10);
-
         pencil.write("The best of the best", paper);
         pencil.erase("best", paper);
         expect(paper.text).to.equal("The best of the     ");
       });
 
       it("Doesn't erase anything if the given string isn't in the text", () => {
-        // pencil = new Pencil(40, 1, 10);
         pencil.write("The best of the best", paper);
         pencil.erase("cheese", paper);
         expect(paper.text).to.equal("The best of the best");
@@ -121,7 +117,6 @@ describe("Pencil", () => {
       });
 
       it("Cannot erase anymore once eraser durability reaches 0", () => {
-        // pencil = new Pencil(40, 1, 10);
         pencil.write("Its in alphabetical order", paper);
         pencil.erase("alphabetical", paper);
         expect(paper.text).to.equal("Its in al           order");
