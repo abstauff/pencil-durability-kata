@@ -99,9 +99,15 @@ describe("Pencil", () => {
     });
 
     it("Eraser durability decreases by 1 per character erased", () => {
-      pencil.write("Fantastic", paper);
-      pencil.erase("stic", paper);
+      pencil.write("Here we are", paper);
+      pencil.erase("Here", paper);
       expect(pencil.eraserDurability).to.equal(6);
+    });
+
+    it("Eraser durability does not decrease when erasing spaces", () => {
+      pencil.write("Here we are", paper);
+      pencil.erase("we are", paper);
+      expect(pencil.eraserDurability).to.equal(5);
     });
   });
 });

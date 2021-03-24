@@ -49,9 +49,11 @@ class Pencil {
 
   eraseString(string) {
     let blankString = "";
-    for (let i = string.length; i > 0; i--) {
+    for (let i = string.length - 1; i >= 0; i--) {
+      if (string[i] !== " ") {
+        this.eraserDurability -= 1;
+      }
       blankString += " ";
-      this.eraserDurability -= 1;
     }
     return blankString;
   }
