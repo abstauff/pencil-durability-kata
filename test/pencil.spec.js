@@ -16,12 +16,17 @@ describe("Pencil", () => {
 
   it("Appends newly written strings to existing text on the paper", () => {
     pencil.write("hello", paper);
-    pencil.write(" friends and neighbors", paper);
-    expect(paper.text).to.equal("hello friends and neighbors");
+    pencil.write(" you!", paper);
+    expect(paper.text).to.equal("hello you!");
   });
 
   it("Has an inital point durability value", () => {
     expect(pencil.pointDurability).to.equal(10);
+  });
+
+  it("Writing uppercase letters decreases point durability by 2", () => {
+    pencil.write("Hi Bob", paper);
+    expect(pencil.pointDurability).to.equal(3);
   });
 
   it("Writing lowercase letters decreases point durability by 1", () => {
