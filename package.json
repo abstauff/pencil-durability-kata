@@ -1,0 +1,24 @@
+{
+  "name": "pencil-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abstauff/pencil-durability-kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abstauff/pencil-durability-kata/issues"
+  },
+  "homepage": "https://github.com/abstauff/pencil-durability-kata#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
