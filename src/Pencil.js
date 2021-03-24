@@ -1,7 +1,7 @@
 class Pencil {
   constructor() {}
-  write(string) {
-    return string;
+  write(string, paper) {
+    paper.text = string;
   }
 }
 
