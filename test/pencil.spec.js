@@ -21,4 +21,10 @@ describe("Pencil", () => {
     pencil.write(" friends and neighbors", paper);
     expect(paper.text).to.equal("hello friends and neighbors");
   });
+
+  it("Has an inital point durability value", () => {
+    pencil = new Pencil(5);
+
+    expect(pencil.pointDurability).to.equal(5);
+  });
 });
