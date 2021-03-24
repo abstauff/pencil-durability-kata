@@ -97,5 +97,11 @@ describe("Pencil", () => {
     it("Eraser has an initial durability value", () => {
       expect(pencil.eraserDurability).to.equal(10);
     });
+
+    it("Eraser durability decreases by 1 per character erased", () => {
+      pencil.write("Fantastic", paper);
+      pencil.erase("stic", paper);
+      expect(pencil.eraserDurability).to.equal(6);
+    });
   });
 });

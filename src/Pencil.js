@@ -51,6 +51,7 @@ class Pencil {
     let blankString = "";
     for (let i = string.length; i > 0; i--) {
       blankString += " ";
+      this.eraserDurability -= 1;
     }
     return blankString;
   }
