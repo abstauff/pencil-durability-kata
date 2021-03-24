@@ -3,6 +3,7 @@ const { isUpperCase, isASpace } = require("./utils");
 class Pencil {
   constructor(pointDurability) {
     this.pointDurability = pointDurability;
+    this.originalPointDurability = pointDurability;
   }
   write(string, paper) {
     for (let i = 0; i < string.length; i++) {
@@ -21,6 +22,10 @@ class Pencil {
         paper.text += " ";
       }
     }
+  }
+
+  sharpen() {
+    this.pointDurability = this.originalPointDurability;
   }
 }
 
